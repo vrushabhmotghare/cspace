@@ -15,5 +15,5 @@ int main ()
     for (int i =4 ; i>= 0; i--){
         printf("Elements of the array in the reverse order arr1[%d] = %d\n",i , arr1[i]);
     }
-    
+
 }
