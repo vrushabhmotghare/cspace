@@ -1,0 +1,79 @@
+C programming:
+
+-->Compilation process of the c programming
+
+-->Memory map 
+    ->.data (intilaized global and staic variable)
+    ->.bss ( non-initilaized global and static variables intilaized to 0)
+    ->.text (code segment /read only)
+    ->stack (local variable)
+    -->heap (dynamic alloaction)
+
+-->Storage class
+    ->auto (default / value-grabage , scope-local , lifetime -within the block it is declared)
+    ->register (cpu register, value-grabage, scope-local, lifetime -within the bloack it is declared)
+    ->global (scope global)
+    ->static ()
+
+-->Static variable  
+    ->static local ( retains value for the variable within different function call)
+    -->static global (accesible only in the file in which it is declared , scope is dame as global)
+    -->static function (sccesible only in the program file in whic it is declared , outside files will not be able to access)
+                        (generally the function will be extern)
+
+-->const keyword
+    -->const means  read only variable  
+    -->const variables should not appear on the left side of the assignment opeartor , will get lvalaue error
+
+
+-->Volatile keyword 
+    -->Volatile keyword tells the compiler or force the compiler not to do the optimization for that variables  
+        -->the variable which are most likely to change due to external event or unexpectedly are set as Volatile   
+        -->every type the variable will be read from the memory and not from the cache register 
+        -->read by pin , not by latch
+
+-->Structure and Union differnece
+    -->used for the storing the variables of the differnet datatype
+    -->in structure padding is used for memory allignment
+    -->the size of the union is the size of the largets element of the union    
+    -->padding in structure can be avoided by the pragma pack/attribute
+
+
+-->What is dynamic memory allocation..?
+    -->How to allocate the dynamic memory in C..?
+        -->What is the differnece between the malloc and calloc
+            -->int *p = (int*)malloc(5*sizeof(int));
+            -->int *q = (int*)calloc (5, sizeof(int));
+        -->syntax of the malloc and calloc  
+        -->What does the malloc returns.
+        -->What is the use of the free()
+            free(p);
+            free(q);
+        -->How to realoocate the dynamic memory with differnet size 
+            -->realloc syntax
+
+-->What is pointer
+    Pointer is the variable which is used to store the memeory adddres of the another variables
+    -->the value of the pointer variable is the address of the naother variable;
+
+-->What is NULL pointer
+
+-->What is the dangling pointer
+
+-->What is memory leakage..?
+
+-->What  is segmentation fault, when can it occur..?
+
+-->What is array
+    -->Array is the derived data type which is used to store the variable of the same data type
+        -->in the consecutive memeory order.
+
+-->What is string
+    -->String is basically the chacter array ending the with the null terminator or null chancter '\0'.
+
+-->What is funcion, function pointer, callback function..?
+
+-->
+
+#######################################################################################################################
+
