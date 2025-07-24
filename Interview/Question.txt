@@ -1,6 +1,13 @@
+--------------
 C programming:
+--------------
 
 -->Compilation process of the c programming
+    -->preprocessing
+    -->compiling
+    -->assembly
+    -->Linking 
+    -->loader
 
 -->Memory map 
     ->.data (intilaized global and staic variable)
@@ -12,7 +19,15 @@ C programming:
 -->Storage class
     ->auto (default / value-grabage , scope-local , lifetime -within the block it is declared)
     ->register (cpu register, value-grabage, scope-local, lifetime -within the bloack it is declared)
-    ->global (scope global)
+    ->global (scope global)String length: Loop until '\0'.
+String copy: Loop and copy each char.
+String concatenation: Copy second string after first.
+String reverse: Swap from ends.
+String search: Loop and compare substrings.
+String n copy: Copy n characters.
+Palindrome: Compare from both ends.
+Count vowels/consonants: Loop and check each char.
+Change case: Use toupper/tolower or ASCII math.
     ->static ()
 
 -->Static variable  
@@ -57,12 +72,17 @@ C programming:
     -->the value of the pointer variable is the address of the naother variable;
 
 -->What is NULL pointer
+    -->the pointer which is not pointing to anywhere.
 
 -->What is the dangling pointer
+    -->A dangling pointer is as pointer that points to the memory that has already been freed.
 
 -->What is memory leakage..?
+    -->when the user or developer forget to free the dynamicaly allocated memory , then memory leak occurs
 
 -->What  is segmentation fault, when can it occur..?
+    -->segmentaion fault can occur for multiple reason
+    -->when stack is full, When we are trying to acccess out of bound memory.
 
 -->What is array
     -->Array is the derived data type which is used to store the variable of the same data type
@@ -72,8 +92,275 @@ C programming:
     -->String is basically the chacter array ending the with the null terminator or null chancter '\0'.
 
 -->What is funcion, function pointer, callback function..?
+    -->Pointer storing the function address is function pointer
+        void (*fun_ptr)(int);
+    -->Calloback function
+        -->Passing function pointer as and argument to another another
+        void call_back(void (*f)()) { f(); }
+
+
+-->
+#######################################################################################################################
+Coding Questions :
+------------------
+-->General :
+    -->fibonacci series 
+        int a = 0, b = 1, n = 10, c;
+        printf("%d %d ", a, b);
+        for(int i = 2; i < n; i++) {
+            c = a + b;
+            printf("%d ", c);
+            a = b;
+            b = c;
+        }
+
+    -->factorial of the number(iterative and recuusrive approch)
+        int main()
+        {
+            int num=0;
+            int fact=1;
+            printf("Enter the number\n");
+            scanf("%d",&num);
+            //while(num !=0)
+            for (int i=num; i>0;i--)
+            {
+                fact = fact*i;
+
+            }
+            printf("%d\n",fact);
+
+            return 0;
+        }
+
+    -->decimal to binary and binary to decimal conversion
+
+
+    -->Print the prime number in between the given range
+    -->Check if the given number is prime number
+    -->
+
+
+
+
+-->Array:
+    -->display the array ellements 
+    -->reverse the array elements
+    -->Sum , Average of array elements
+    -->smallest and largest elements in the array
+    -->second largest element in the array
+    -->insert the array elelement at position
+    -->Allocate the memory for the 5 integer elements in the array dynamically
+    -->Search the specific value in the array
+    
+
+-->String :
+    -->Custom function for 
+        -->String length
+            while(*str != '\0')
+            {
+                count++;
+                str++;
+            }
+
+        -->String copy
+        -->string concatation
+        -->String reverse
+        -->String Search
+        -->String n copy
+
+    -->chekc if the string is pallindrome 
+    -->count the vowels and consenenet
+    -->Change the case of the string
+    -->
+
+-->Bitwise :
+    -->Combine two 16-bit into 32-bit: (a << 16) | b
+    -->Check bit set: (num & (1 << n))
+    -->Count set/reset bits: Loop and count.
+    -->Set/reset/toggle bit: Use bitwise OR/AND/XOR.
+    -->Swap even/odd bits: Use masks and shifts.
+    -->Set leftmost bit: Find highest bit, set it.
+    -->Swap numbers: Use XOR swap.
+
+
+-->Linked List :
+    -->Create a list 
+    -->Display, Insert at start, Insert at end, delete at start, delete at end, 
+    -->delete at position , Insert at position,
+    -->reverse the linked list
+    -->Find the middle element of the list
+    -->Find if there is a loop in the list
+    -->find the list is cicular or not
+    
+-->Stack (using array and linked list)
+    -->Stack operations:
+        -->Push
+        -->pop 
+        -->display
+        -->is empty
+        -->is full
+        -->find the top elements
+
+-->queue(using array and linked list)    
+    -->Queue operations
+        -->enter queue
+        -->delete queue
+        -->display
+        -->is empty
+        -->is full
+    -->circular queue
+
+
+
+
+#######################################################################################################################
+Operating System Questions :
+
+-->What is the difference between the process and thread
+    Process is the program is execution 
+    -->Seperate emeory space
+    -->Heavyweight
+    -->Required IPC (inter process communication) for communication between differnet process
+
+    Thread is the smallest unit of excution in side process
+    -->Shared memory space between the differnet threads of the same program
+    -->lightweight
+    -->shared data.
+
+    -->What is differnent process statte
+        -->create (process is created) 
+        -->Ready (Process is in the ready queue waiting for the executiion to starting)
+        -->Running (process is executing)
+        -->Waitiing (process is interrupted , either beacuse of other process, or waiting for some I/O event to happen)
+        -->Terminated (Process has competed it execution and terminated)
+
+    -->What is zombie process
+        -->A Zombie process is a process that has completed execution (it has terminated),
+             but still has an entry in the process table.
+    
+    -->How new process is created
+        -->We can create the new process with the fork system call
+
+-->What is scheduling
+    -->differnet scheduling alogorithm
+    -->round robin
+    -->smalest task first
+    -->FCFS (first comes first serve)
+    -->
 
 -->
 
-#######################################################################################################################
+-->What is user space and kernel space
+    -->how user space communicates with kernel space
+    
+-->What is system call
+    -->
+
+-->What is context switch
+    
+-->What is deadlock
+        -->Deadlock is a situation where a set of processes are blocked because each process is holding a
+        resource and waiting for another resource acquired by some other process.
+        Deadlock can arise if following four conditions hold simultaneously (Necessary
+        Conditions)
+        
+        Mutual Exclusion: One or more than one resource are non-sharable (Only one process can
+        use at a time)
+        Hold and Wait: A process is holding at least one resource and waiting for resources.
+        No Preemption: A resource cannot be taken from a process unless the process releases the
+        resource.
+        Circular Wait: A set of processes are waiting for each other in circular form
+    
+-->what is race condition
+
+-->What is automic operation
+
+-->What is mutex
+    -->What is mutex lock
+
+-->What is semaphore
+
+-->What is binary semaphore
+
+-->What is spinlock
+
+-->What is virtual memory 
+
+-->What is paging 
+
+-->Whats is external and internal fragmenattion
+
+-->What is page swapping
+
+-->What is monolithic and micro kenrel
+
+-->What is interrupt
+    -->top half
+    -->bottom half
+        -->tasklet
+        -->softirq
+
+-->What is IPC..? Types of IPC
+    -->pipe 
+    -->message queue
+    -->shared memeory
+    -->socket
+    -->
+
+-->What is multithreading
+
+###############################################################################################
+
+-->Device Driver And Board Support Package
+------------------------------------------
+-->What is device Driver
+
+-->What is kenrel module
+
+-->What is staticlayy and dynamically loadable driver module
+
+-->What is device tree
+
+-->What is co-relation between the device tree and device driver
+
+-->What is pinmuxing
+
+-->Explain the boot sequence of the ARM machine
+    -->POST (power on self test)(RESET vector)
+        -->points to ROM starting address
+        -->do the basic hardware sanity check,
+
+    -->BOOTLOADER(PL)
+
+    -->seconadray boot loader
+
+    -->kernel
+
+    -->init process
+
+    -->user space
+
+-->What is board support Package
+
+-->How we can add the new board files support in our system
+//L&T
+-->Differnece between the kmalloc and malloc
+
+-->Can we map the kernel dynamic memeory to user applications and vice versa
+
+--> Whta is the entry point of the driver
+
+-->What operation /funcionality it performs
+
+-->What is container of macro 
+
+-->kernel utilities like mmap
+//
+
+-->What is ioremap
+
+-->What is virtual memory and its usage
+
+-->What is IPC , explain message queue
+
 
