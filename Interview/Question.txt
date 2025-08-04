@@ -364,3 +364,89 @@ Operating System Questions :
 -->What is IPC , explain message queue
 
 
+
+
+
+### Windriver / C / OS Interview Questions with Answers
+
+-->Q: What is the difference between undefined and undeclared?**  
+-->A: 
+- **Undefined:** The variable or function is declared but not defined (e.g., function prototype exists, but no body).
+- **Undeclared:** The variable or function is used without any declaration in the code.
+
+---
+
+-->Q: Where is the command line argument stored in the memory segment?**  
+-->A:  
+Command line arguments (`argv`) are stored on the **stack** segment of the process memory.
+
+---
+
+**Q: What memory segments are separate and shared between threads?**  
+**A:  
+- **Separate:** Stack (each thread has its own stack)
+- **Shared:** Heap, global/static data, code segment (text)
+
+---
+
+**Q: What happens if we use a macro which is not defined?**  
+**A:**  
+The preprocessor replaces it with nothing (empty), which may cause a compilation error if used in code.
+
+---
+
+**Q: What is a message queue?**  
+**A:**  
+A message queue is an IPC (Inter-Process Communication) mechanism that allows processes or threads to exchange messages in a FIFO manner.
+
+---
+
+**Q: Where is the definition of printf present?**  
+**A:**  
+The definition of `printf` is in the C standard library, specifically in the file `stdio.h` and implemented in the standard C library (like `libc`).
+
+---
+
+**Q: What is the difference between a static library and a dynamic library?**  
+**A:**  
+- **Static library (.a/.lib):** Linked at compile time, becomes part of the executable.
+- **Dynamic library (.so/.dll):** Linked at runtime or load time, not part of the executable.
+
+---
+
+**Q: When should we use static and dynamic libraries?**  
+**A:**  
+- **Static:** When you want all code in a single executable, no external dependencies.
+- **Dynamic:** When you want to share code between programs, reduce executable size, or allow updates without recompiling.
+
+---
+
+**Q: In baremetal, which type of library linking will happen and why?**  
+**A:**  
+**Static linking** is used in baremetal systems because there is no OS to load dynamic libraries at runtime.
+
+---
+
+**Q: How does the kernel know which type of file we are trying to open and read/write?**  
+**A:**  
+The kernel uses the file's metadata (like file type, permissions, device numbers) and the file system's implementation to determine how to handle the file.
+
+---
+
+**Q: What is a function pointer?**  
+**A:**  
+A function pointer is a variable that stores the address of a function and can be used to call the function indirectly.
+
+---
+
+**Q: 0xabcd1234 swap nibble a and 3, swap 16 bytes**  
+**A:**  
+- **Swap nibble a and 3:**  
+  - Nibble positions: 0xabcd1234  
+  - Swap the first nibble (a) and the fourth nibble (3):  
+  - Result: 0x3bcd12a4  
+- **Swap 16 bytes:**  
+  - If you mean swap the two 16-bit halves:  
+  - 0xabcd1234 → 0x1234abcd
+
+-
