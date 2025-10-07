@@ -17,6 +17,7 @@ void append( struct array *arr, int val)
 void insert ( struct array * arr , int index , int val)
 {
     int i =0;
+    printf("Hello world\n");
     if(index >=0 && index <= arr->length)
     {
         for (i=arr->length; i > index; i--)
